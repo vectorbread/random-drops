@@ -3,7 +3,6 @@ using UnityEngine;
 public class Chest : MonoBehaviour
 {
     public Transform loot;
-    public WeightedRandomList<Transform> lootTable;
 
     Animator animator;
 
@@ -19,7 +18,7 @@ public class Chest : MonoBehaviour
             if (IsOpen())
             {
                 animator.SetTrigger("close");
-                ClearItem();
+                HideItem();
             }
             else
             {
@@ -33,26 +32,13 @@ public class Chest : MonoBehaviour
         return animator.GetCurrentAnimatorStateInfo(0).IsName("ChestOpen");
     }
 
-    void ClearItem()
+    void HideItem()
     {
-        if (loot.childCount > 0)
-        {
-            GameObject lastItem = loot.transform.GetChild(0).gameObject;
-            Destroy(lastItem);
-        }
-
-        loot.transform.localScale = Vector3.zero;
         loot.gameObject.SetActive(false);
     }
 
-    public void SpawnItem()
+    void ShowItem()
     {
-        Transform item = lootTable.GetRandom();
-
-        if (item != null)
-        {
-            Instantiate(item, loot);
-            loot.gameObject.SetActive(true);
-        }
+        loot.gameObject.SetActive(true);
     }
 }
