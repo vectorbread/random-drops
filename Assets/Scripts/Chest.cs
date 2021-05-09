@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour
 {
-    public Transform loot;
+    public Transform itemHolder;
 
     Animator animator;
 
@@ -34,11 +34,12 @@ public class Chest : MonoBehaviour
 
     void HideItem()
     {
-        loot.gameObject.SetActive(false);
+        itemHolder.localScale = Vector3.zero;
+        itemHolder.gameObject.SetActive(false);
     }
 
     void ShowItem()
     {
-        loot.gameObject.SetActive(true);
+        itemHolder.gameObject.SetActive(true);
     }
 }

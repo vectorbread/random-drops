@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 614541901}
   - component: {fileID: 614541902}
   m_Layer: 0
-  m_Name: Loot
+  m_Name: ItemHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -450,21 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a5492c92ccc2438684b18b1f3092419, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loot: {fileID: 614541901}
-  lootTable:
-    list:
-    - item: {fileID: 0}
-      weight: 1
-    - item: {fileID: -8679921383154817045, guid: a3aa1d37be0b549bebacbbe0f64eba58, type: 3}
-      weight: 3
-    - item: {fileID: -8679921383154817045, guid: 02899071da4d6429c8d36c7405246011, type: 3}
-      weight: 3
-    - item: {fileID: -8679921383154817045, guid: dbac4f5f0bce5440198847bc2b5a75b5, type: 3}
-      weight: 3
-    - item: {fileID: -8679921383154817045, guid: 0a540871950744531ba8a9a3e5c3ca4c, type: 3}
-      weight: 2
-    - item: {fileID: -8679921383154817045, guid: 0b304439beda640d987498dbc060fe7d, type: 3}
-      weight: 2
+  itemHolder: {fileID: 614541901}
 --- !u!4 &1025263701 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dbac4f5f0bce5440198847bc2b5a75b5, type: 3}
