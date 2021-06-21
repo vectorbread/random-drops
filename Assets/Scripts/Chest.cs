@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour
 {
+    public WeightedRandomList<Transform> lootTable;
+
     public Transform itemHolder;
 
     Animator animator;
@@ -36,10 +38,17 @@ public class Chest : MonoBehaviour
     {
         itemHolder.localScale = Vector3.zero;
         itemHolder.gameObject.SetActive(false);
+
+        foreach (Transform child in itemHolder)
+        {
+            Destroy(child.gameObject);
+        }
     }
 
     void ShowItem()
     {
+        Transform item = lootTable.GetRandom();
+        Instantiate(item, itemHolder);
         itemHolder.gameObject.SetActive(true);
     }
 }
